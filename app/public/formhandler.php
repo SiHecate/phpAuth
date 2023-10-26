@@ -25,7 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Error: " . $conn->errorInfo()[2];
         }
 
-        // Veriyi almak için SELECT sorgusu
         $selectSql = "SELECT firstname, lastname, pet FROM example";
         $result = $conn->query($selectSql);
 
