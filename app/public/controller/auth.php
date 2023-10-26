@@ -15,4 +15,20 @@
             echo "error: " . $e->getMessage();
         }
     }
-?>
+
+    function createExampleTable($pdo) {
+        $sql = "CREATE TABLE example (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            firstname VARCHAR(255) NOT NULL,
+            lastname VARCHAR(255) NOT NULL,
+            pet VARCHAR(15) NOT NULL
+        )";
+    
+        try {
+            $pdo->exec($sql);
+            echo "Example table created successfully.";
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
+    }
+    
