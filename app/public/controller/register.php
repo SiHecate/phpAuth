@@ -40,8 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
     } catch (PDOException $e) {
-        // Veritabanı hatası olursa burada işleyin
-        echo "Veritabanı hatası: " . $e->getMessage();
+        echo "Database error: " . $e->getMessage();
     }
 } else {
     header("Location: ../index.html");
